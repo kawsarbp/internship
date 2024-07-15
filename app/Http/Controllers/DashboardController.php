@@ -11,9 +11,11 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         if($user->hasRole('admin')){
-            return view('dashboard');
+            $user = 'admin';
+            return view('dashboard',compact('user'));
         }else if($user->hasRole('user')){
-            return 'user page';
+            $user = 'user';
+            return view('dashboard',compact('user'));
         }else{
             return  'Unauthorized';
         }

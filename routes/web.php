@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::group(['middleware' => ['role:user']], function () {
+Route::group(['middleware' => ['role:user','auth']], function () {
     Route::get('/role',[SiteController::class,'role'])->name('role');
 });
 
