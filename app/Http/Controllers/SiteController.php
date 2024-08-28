@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -23,5 +24,13 @@ class SiteController extends Controller
         }else{
             return 'no';
         }
+    }
+
+    public function test()
+    {
+//        return Storage::allFiles('profile_picture');
+
+//        return Storage::get('one.txt');
+        return storage_path('docs/profile_picture/YYknnTQc4uTHW3RBbJvDoAbRiT0683TvdPziyEyf.jpg');
     }
 }

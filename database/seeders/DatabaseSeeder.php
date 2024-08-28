@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('bosspublic'),
+            'password' => Hash::make('password'),
         ]);
         $this->call([
             RoleSeeder::class
